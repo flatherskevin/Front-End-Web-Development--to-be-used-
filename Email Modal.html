@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+	<meta charset="UTF-8" />
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:400' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<style>
+		.modal{
+			height: 350px;
+			width: 450px;
+			background-color: #898989;
+			padding: 7px;
+			border-radius: 1rem;
+		}
+		
+		.modal-address,.modal-subject{
+			height: 30px;
+			width: 400px;
+			background-color: #fbfbfb;
+			border: #898989 solid;
+			text-align: left;
+			line-height: 30px;
+			float: top;
+			color: #256e74;
+			overflow: hidden;
+			font-weight: bold;
+			font-family: 'Quicksand', sans-serif;
+			margin: 0 auto;
+			border-radius: .4rem;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		
+		.modal-footer{
+			height: 30px;
+			width: 400px;
+			border: none;
+			line-height: 30px;
+			float: top;
+			color: #256e74;
+			font-weight: bold;
+			font-family: 'Quicksand', sans-serif;
+			margin: 0 auto;
+		}
+		
+		.sendEmail{
+			height: 15px;		
+			float: right;
+			line-height: 15px;
+			padding: 3px;
+			cursor: pointer;
+			border: #cccccc solid;
+			position: relative;
+			background-color: #fbfbfb;
+		}
+		
+		.sendEmail:hover{
+			border: #71bfb1 solid;
+		}
+		
+		.modal-message{
+			height: 200px;
+			width: 400px;
+			background-color: #fbfbfb;
+			border: #898989 solid;
+			text-align: left;
+			line-height: 20px;
+			font-family: 'Quicksand', sans-serif;
+			float: top;
+			overflow-y: auto;
+			word-wrap: break-word;
+			color: #256e74;
+			font-weight: bold;
+			margin: 0 auto;
+			border-radius: .4rem;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		
+		.modal-element{
+			margin-top: 7px;
+			margin-bottom: 7px;
+			position: relative;
+			float: bottom;
+		}
+		
+		[contentEditable=true]:empty:not(:focus):before{
+			content:attr(data-placeholder);
+			color: #090909;
+			font-weight: 200;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$('.sendEmail').click(function(){
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="modal">
+		
+		<div class="modal-element modal-address" onkeypress="return (this.innerText.length >= 35 ? false : true )" contentEditable="true" data-placeholder="your email"></div>
+		<div class="modal-element modal-subject" onkeypress="return (this.innerText.length >= 35 ? false : true )" contentEditable="true"data-placeholder="your name"></div>
+		<div class="modal-element modal-message" onkeypress="return (this.innerText.length >= 500 ? false : true )" spellcheck="true" contentEditable="true" data-placeholder="message: maximum 1000 characters"></div>
+		<div class="modal-element modal-footer">
+			<div class="sendEmail" type="submit" name="sendEmail">Send</div>
+		</div>
+	</div>
+</body>    
+    
+</html>
